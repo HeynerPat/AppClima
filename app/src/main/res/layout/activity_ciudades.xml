@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Bienvenido a mi App del Clima, para poder verl el clima de una ciudad selecciona la opcion de abajo."
+        android:text="Bienvenido a mi App del Clima, para poder ver el clima de una ciudad selecciona la opcion de abajo."
         android:textColor="@color/black" />
 
     <Button
