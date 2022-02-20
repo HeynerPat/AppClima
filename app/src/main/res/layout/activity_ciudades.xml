@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_estatus"
+    android:orientation="vertical"
+    tools:context=".Ciudades">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Bienvenido a mi App del Clima, para poder verl el clima de una ciudad selecciona la opcion de abajo."
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/bFCP"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clima de la Ciudad deFelipe Carrillo Puerto"
+        android:textColor="@color/purple_700" />
+
+    <Button
+        android:id="@+id/bBerlin"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clima de la Ciudad de Berlin"
+        android:textColor="@color/purple_700" />
+</LinearLayout>
