@@ -21,7 +21,7 @@
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Clima de la Ciudad deFelipe Carrillo Puerto"
+        android:text="Clima de la Ciudad de Felipe Carrillo Puerto"
         android:textColor="@color/purple_700" />
 
     <Button
