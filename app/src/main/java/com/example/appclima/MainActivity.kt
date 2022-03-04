@@ -1,15 +1,14 @@
     package com.example.appclima
 
-    import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
     import android.util.Log
-    import android.widget.Toast
     import android.widget.TextView
+    import androidx.appcompat.app.AppCompatActivity
     import com.android.volley.Request
     import com.android.volley.Response
     import com.android.volley.toolbox.StringRequest
     import com.android.volley.toolbox.Volley
-    import java.lang.Exception
+    import com.google.gson.Gson
 
 
     class MainActivity : AppCompatActivity() {
@@ -37,7 +36,7 @@
         }else{
             //Toast.makeText(this,"No hay una conexión a internet", Toast.LENGTH_LONG).show()
         }
-
+        /*
         val ciudadFCP = Ciudad(nombre= "Felipe Carrillo Puerto", grados= 15, estatus="Soleado")
         val ciudadBerlin = Ciudad(nombre= "Berlin", grados= 30, estatus="Cielo Despejado")
 
@@ -55,6 +54,7 @@
         }else{
             Toast.makeText(this, "No se encuentra La Informacion", Toast.LENGTH_SHORT).show()
         }
+         */
     }
 
         //Metodo para Volley
@@ -66,6 +66,11 @@
                 try {
                     Log.d( "solicitudHTTPVolley", response)
 
+                    val gson = Gson()
+                    val ciudad = gson.fromJson(response, Ciudad::class.java)
+                    tvCiudad?.text = ciudad.name
+                    tvGrados?.text = ciudad.main?.temp.toString()+"°"
+                    tvEstatus?.text = ciudad.weather?.get(0)?.description
                 }catch (e: Exception){
                 } }, Response.ErrorListener{} )
             queue.add(solicitud)
