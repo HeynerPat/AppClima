@@ -18,13 +18,13 @@ class Ciudades : AppCompatActivity() {
 
         bFCP.setOnClickListener(View.OnClickListener{
             val intent = Intent(this,MainActivity::class.java)
-            intent.putExtra(TAG, "Ciudad-FCP")
+            intent.putExtra(TAG, "3527639")
             startActivity(intent)
         })
 
         bBerlin.setOnClickListener(View.OnClickListener{
             val intent = Intent(this,MainActivity::class.java)
-            intent.putExtra(TAG, "Ciudad-Berlin")
+            intent.putExtra(TAG, "2950159")
             startActivity(intent)
         })
     }

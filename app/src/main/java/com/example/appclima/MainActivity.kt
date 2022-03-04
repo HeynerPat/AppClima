@@ -3,6 +3,7 @@
     import android.os.Bundle
     import android.util.Log
     import android.widget.TextView
+    import android.widget.Toast
     import androidx.appcompat.app.AppCompatActivity
     import com.android.volley.Request
     import com.android.volley.Response
@@ -28,35 +29,14 @@
         val ciudad = intent.getStringExtra("com.example.appclima.ciudades.CIUDAD")
 
         if(Network.hayRed(this)){
-            //Toast.makeText(this,"Si hay Red", Toast.LENGTH_LONG).show()
-            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id=3527639&appid=494454b4c5cc62db452b966478410685")
-            //494454b4c5cc62db452b966478410685
-            //FCP 3527639
+            solicitudHTTPVolley("http://api.openweathermap.org/data/2.5/weather?id="+ciudad+"&appid=494454b4c5cc62db452b966478410685&units=metric&lang=es")
+
 
         }else{
-            //Toast.makeText(this,"No hay una conexión a internet", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "No hay Red", Toast.LENGTH_SHORT).show()
         }
-        /*
-        val ciudadFCP = Ciudad(nombre= "Felipe Carrillo Puerto", grados= 15, estatus="Soleado")
-        val ciudadBerlin = Ciudad(nombre= "Berlin", grados= 30, estatus="Cielo Despejado")
 
-        if(ciudad == "Ciudad-FCP"){
-            //Mostrar informacion de FCP
-            tvCiudad?.text = ciudadFCP.nombre
-            tvGrados?.text = ciudadFCP.grados.toString()+"°"
-            tvEstatus?.text = ciudadFCP.estatus
-
-        }else if(ciudad == "Ciudad-Berlin"){
-            //Mostrar Informacion de Berlin
-            tvCiudad?.text = ciudadBerlin.nombre
-            tvGrados?.text = ciudadBerlin.grados.toString()+"°"
-            tvEstatus?.text = ciudadBerlin.estatus
-        }else{
-            Toast.makeText(this, "No se encuentra La Informacion", Toast.LENGTH_SHORT).show()
-        }
-         */
     }
-
         //Metodo para Volley
         private fun solicitudHTTPVolley(url:String){
             val queue = Volley.newRequestQueue(this)
